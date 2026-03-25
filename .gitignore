@@ -1,0 +1,47 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.cache/
+.parcel-cache/
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Misc
+*.tgz
+*.zip
+*.gz
+
+# Temporary files
+*.tmp
+*.temp
+
+# Mac resource forks
+Icon\r
