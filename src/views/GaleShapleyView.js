@@ -25,6 +25,10 @@ class GaleShapleyView {
                 <div id="metrics-grid" class="metrics"></div>
                 
                 <div id="controls" class="controls"></div>
+
+                <div id="current-step" class="current-step-box">
+                    Waiting to start...
+                </div>
                 
                 <div id="stage" class="stage-container">
                     <div class="column">
@@ -46,6 +50,7 @@ class GaleShapleyView {
         this.elements = {
             metricsGrid: document.getElementById('metrics-grid'),
             controls: document.getElementById('controls'),
+            currentStep: document.getElementById('current-step'),
             proposers: document.getElementById('proposers'),
             receivers: document.getElementById('receivers'),
             lines: document.getElementById('lines'),
@@ -262,10 +267,22 @@ class GaleShapleyView {
     }
 
     /**
+     * Update the current step explanation box
+     * @param {string} message
+     */
+    updateCurrentStep(message) {
+        if (this.elements.currentStep) {
+            this.elements.currentStep.textContent = message || 'Waiting to start...';
+        }
+    }
+
+    /**
      * Add entry to execution log
      * @param {Object} step - Step result from algorithm
      */
     addLogEntry(step) {
+        this.updateCurrentStep(step.message);
+
         let type = 'info';
         if (step.type === 'accept_free' || step.type === 'accept_better') type = 'accept';
         if (step.type === 'reject') type = 'reject';
@@ -278,6 +295,7 @@ class GaleShapleyView {
      */
     clearLog() {
         this.elements.log.innerHTML = '';
+        this.updateCurrentStep('Waiting to start...');
     }
 
     /**
