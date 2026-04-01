@@ -440,3 +440,16 @@ select {
 .back-arrow {
     font-size: 16px;
 }
+
+.current-step-box {
+  background: #f8fafc;
+  border: 1px solid #dbe3ea;
+  border-left: 4px solid #1877f2;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1f2937;
+  font-weight: 500;
+}
