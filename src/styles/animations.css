@@ -524,3 +524,23 @@ select {
     border-radius: 10px;
     padding: 14px 16px;
 }
+.matrix-cell.starred {
+    background: #d1fae5;
+    border: 2px solid #10b981;
+    font-weight: bold;
+}
+
+.matrix-cell.primed {
+    background: #fef3c7;
+    border: 2px dashed #f59e0b;
+}
+
+.matrix-cell.covered {
+    background: #e5e7eb;
+    opacity: 0.6;
+}
+
+.matrix-cell.path-cell {
+    background: #e0e7ff;
+    border: 2px solid #6366f1;
+}
