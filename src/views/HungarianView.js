@@ -124,12 +124,24 @@ class HungarianView {
                 const isRowHighlight = state.animationState.highlightedRow === i;
                 const isColHighlight = state.animationState.highlightedCol === j;
 
+                const isStarred = state.maskMatrix?.[i]?.[j] === 1;
+                const isPrimed = state.maskMatrix?.[i]?.[j] === 2;
+                const isCoveredRow = state.coveredRows?.[i];
+                const isCoveredCol = state.coveredCols?.[j];
+                const isPath = state.path?.some(p => p.row === i && p.col === j);
+
                 let className = 'matrix-cell';
+
                 if (isHighlighted) className += ' highlighted';
                 if (isAssigned) className += ' assigned';
                 if (isRowHighlight) className += ' row-active';
                 if (isColHighlight) className += ' col-active';
                 if (matrix[i][j] === 0) className += ' zero-cell';
+
+                if (isStarred) className += ' starred';
+                if (isPrimed) className += ' primed';
+                if (isCoveredRow || isCoveredCol) className += ' covered';
+                if (isPath) className += ' path-cell';
 
                 html += `<td class="${className}">${matrix[i][j]}</td>`;
             }
