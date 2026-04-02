@@ -187,7 +187,9 @@ class HungarianView {
 
         let type = 'info';
         if (step.type === 'row_reduce' || step.type === 'col_reduce') type = 'proposal';
-        if (step.type === 'assign') type = 'accept';
+        if (step.type === 'star_zero' || step.type === 'prime') type = 'proposal';
+        if (step.type === 'cover' || step.type === 'adjust') type = 'step';
+        if (step.type === 'augment') type = 'accept';
         if (step.type === 'complete') type = 'success';
 
         this.renderer.appendToLog(this.elements.log, step.message, type);
