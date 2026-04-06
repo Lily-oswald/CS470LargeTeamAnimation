@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinic's Algorithm - MVC Implementation</title>
+    <link rel="stylesheet" href="src/styles/animations.css">
+</head>
+<body>
+    <a href="navigation.html" class="back-button">
+        <span class="back-arrow">←</span>
+        <span>Back to Home</span>
+    </a>
+
+    <div id="app-container"></div>
+
+    <!-- Load in dependency order: algorithm → model → view → controller -->
+    <script src="src/algorithms/Dinic.js"></script>
+    <script src="src/models/DinicModel.js"></script>
+    <script src="src/views/DinicView.js"></script>
+    <script src="src/controllers/DinicController.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const algorithm  = new DinicsAlgorithm();
+            const model      = new DinicsModel(algorithm);
+            const view       = new DinicsView('app-container');
+            const controller = new DinicsController(model, view);
+        });
+    </script>
+</body>
+</html>
