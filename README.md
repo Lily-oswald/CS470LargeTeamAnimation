@@ -25,8 +25,10 @@ project/
 ```
 
 ## Algorithms
+-  **Hungarian algorithm** - Assignment problem solver (minimum-cost matching in bipartite graphs)
+-  **Gale-Shapley** - Stable matching algorithm (proposer-optimal interactive visualization)
+-  **Dinic's algorithm** - Maximum flow algorithm using layered networks (visualization of flow and blocking flows)
 
--  **Gale-Shapley** - Stable matching algorithm
 
 ## MVC Architecture
 
