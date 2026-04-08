@@ -13,8 +13,8 @@ Step-by-step visualizations of classic algorithms using MVC architecture.
 project/
 ├── navigation.html              # Main navigation page (start here)
 ├── GSindex.html                 # Gale-Shapley algorithm page
-├── HungarianIndex.html          # Hungarian algorithm (coming soon)
-├── DinicsIndex.html             # Dinic's algorithm (coming soon)
+├── HungarianIndex.html          # Hungarian algorithm
+├── DinicsIndex.html             # Dinic's algorithm
 └── src/
     ├── algorithms/             # Pure algorithm logic (no UI)
     ├── models/                 # State management
